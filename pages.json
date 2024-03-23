@@ -9,13 +9,30 @@
             "style" : {}
          }
         ,{
-            "path" : "pages/entrance/entrance",
+            "path" : "pages/cate/cate",
+            "style" : {}
+        }
+        ,{
+            "path" : "pages/cart/cart",
             "style" : {}
         }
     ],
+    "subPackages":[{
+      "root": "subpackage",
+      "pages": [
+        {
+          "path" : "goods_detail/goods_detail",
+          "style" : {}
+        } 
+                ,{
+                    "path" : "goods_list/goods_list",
+                    "style" : {}
+                }
+            ]
+    }],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
-		"navigationBarTitleText": "每日记",
+		"navigationBarTitleText": "优购",
 		"navigationBarBackgroundColor": "#FFA200",
 		"backgroundColor": "#FFFFFF"
 	},
@@ -25,12 +42,12 @@
     "list":[
       {
         "pagePath":"pages/home/home",
-        "text":"首页",
+        "text":"首页", 
         "iconPath":"static/tab_icons/home.png",
         "selectedIconPath":"static/tab_icons/home-active.png"
       },
       {
-        "pagePath":"pages/entrance/entrance",
+        "pagePath":"pages/cate/cate",
         "text":"分类",
         "iconPath":"static/tab_icons/cate.png",
         "selectedIconPath":"static/tab_icons/cate-active.png"
@@ -40,6 +57,12 @@
         "text":"我的",
         "iconPath":"static/tab_icons/my.png",
         "selectedIconPath":"static/tab_icons/my-active.png"
+      },
+      {
+        "pagePath":"pages/cart/cart",
+        "text":"购物车",
+        "iconPath":"static/tab_icons/cart.png",
+        "selectedIconPath":"static/tab_icons/cart-active.png"
       }
     ]
   }

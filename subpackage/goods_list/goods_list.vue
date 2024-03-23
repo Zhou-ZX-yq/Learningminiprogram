@@ -1,6 +1,6 @@
 <template>
 	<view>
-		Enter
+		Goods_list
 	</view>
 </template>
 
