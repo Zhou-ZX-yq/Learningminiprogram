@@ -1,5 +1,12 @@
 <template>
+
+
 	<view>
+    <!-- 顶端搜索框 -->
+  <view class="searchBox">
+    <my-search @click="ToSearch"></my-search>
+  </view>
+    
 		<!-- 轮播图结构 (快速生成：uswiper)-->
     <swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="1000" :circular="true">
       <swiper-item v-for="(item,i) in swiperList" :key="i">
@@ -89,15 +96,18 @@
         const {data:res} =await uni.$http.get('/api/public/v1/home/floordata');
         if(res.meta.status != 200)
         return uni.$showMsg()
-          
         //获取到的数据有自己的url地址，但并不是我们想要的地址，所以先对数据进行处理
         res.message.forEach(floor => {
           floor.product_list.forEach(prod => {
            prod.url = '/subpackage/goods_list/goods_list?' + prod.navigator_url.split('?')[1]
           })
         })
-        console.log(res)
         this.floorList=res.message
+      },
+      ToSearch(){
+        uni.navigateTo({
+          url: '/subpackage/search/search'
+        })
       }
  
     }
@@ -135,6 +145,13 @@
   .floor-box{
     display: flex;
     padding-left: 10rpx;
+  }
+  .searchBox{
+    position: sticky;
+    
+    top: 0;
+    
+    z-index: 999;//防止轮播图覆盖
   }
 
 </style>

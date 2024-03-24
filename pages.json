@@ -23,17 +23,21 @@
         {
           "path" : "goods_detail/goods_detail",
           "style" : {}
-        } 
-                ,{
+        },
+        {
                     "path" : "goods_list/goods_list",
                     "style" : {}
-                }
+        },
+        {
+                    "path" : "search/search",
+                    "style" : {}
+        }
             ]
     }],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "优购",
-		"navigationBarBackgroundColor": "#FFA200",
+		"navigationBarBackgroundColor": "#C00000",
 		"backgroundColor": "#FFFFFF"
 	},
   "tabBar":{

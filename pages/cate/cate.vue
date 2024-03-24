@@ -1,8 +1,9 @@
 <template>
 	<view>
-<!-- 实现分类页面 
-1.页面由两个滑动组件构成
--->
+    <!-- 使用搜索组件 -->
+    <!-- <my-search :bgcolor="'black'" :radius="3"></my-search> -->
+    <my-search @click="ToSearch"></my-search>
+<!-- 实现分类页面 -->
 <view class="scroll-view-container">
   
   <!-- 滑动组件左 ; 注意高度是怎么设置的-->
@@ -53,6 +54,11 @@
         scrollTop: 0
 			};
 		},
+    onLoad() {
+      const sysinfo = uni.getSystemInfoSync();
+      this.wh=sysinfo.windowHeight - 50
+      this.getCateList();
+    },
     methods:{
      async getCateList(){
         const {data:res} = await uni.$http.get('/api/public/v1/categories')
@@ -75,13 +81,15 @@
         uni.navigateTo({
           url:'/subpackage/goods_list/goods_list?cid=' + item3.cat_id
         })
-      }
-    },
-    onLoad() {
-      const sysinfo = uni.getSystemInfoSync();
-      this.wh=sysinfo.windowHeight
-      this.getCateList();
-    },
+      },
+     ToSearch(){
+       uni.navigateTo({
+         url: '/subpackage/search/search'
+       })
+     } 
+    }
+    
+
     
 	}
 </script>
@@ -138,6 +146,7 @@
       width: 60px;
       height: 60px;
     }
+    
     text {
       font-size: 12px;
     }
