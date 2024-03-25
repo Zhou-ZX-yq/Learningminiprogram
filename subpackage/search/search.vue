@@ -67,8 +67,6 @@
         })
       },
       gethistoryList(){
-        // this.Historylist.push(this.kw)
-        
         //数组转化为set对象
         const set=new Set(this.Historylist)
         //删除所有与kw相同的数据

@@ -26,11 +26,16 @@
         },
         {
                     "path" : "goods_list/goods_list",
-                    "style" : {}
+                    "style" : {
+                      "onReachBottomDistance": 150,
+                      "backgroundColor":"#F8F8F8",
+                      "enablePullDownRefresh": true
+                    }
         },
         {
                     "path" : "search/search",
-                    "style" : {}
+                    "style" : {
+                    }
         }
             ]
     }],
