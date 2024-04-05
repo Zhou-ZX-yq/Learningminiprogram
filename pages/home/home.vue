@@ -1,6 +1,4 @@
 <template>
-
-
 	<view>
     <!-- 顶端搜索框 -->
   <view class="searchBox">
